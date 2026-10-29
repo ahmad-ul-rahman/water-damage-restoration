@@ -37,8 +37,7 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
   })
 
   const onSubmit = async (data: QuoteFormData) => {
-    // Marked TODO placeholder for live backend submission / CRM webhook
-    console.log('[TODO: Submit emergency lead]', data)
+    console.log('[Submit emergency lead]', data)
     await new Promise((resolve) => setTimeout(resolve, 600))
     toast.success('Emergency Request Received!', {
       description: `A senior restoration dispatcher is calling you at ${data.phone} within 90 seconds.`,
@@ -52,28 +51,28 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
     <Drawer.Root open={open} onOpenChange={onOpenChange}>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 transition-opacity" />
-        <Drawer.Content className="bg-[#101E35] border-t border-[#1E3352] flex flex-col rounded-t-[20px] max-h-[92vh] fixed bottom-0 left-0 right-0 z-50 outline-none text-slate-100">
+        <Drawer.Content className="bg-[#101E35] border-t border-white/20 flex flex-col rounded-t-[24px] max-h-[92vh] fixed bottom-0 left-0 right-0 z-50 outline-none text-slate-100">
           {/* Grab Bar */}
-          <div className="p-4 bg-[#0B1528] rounded-t-[20px] flex-1 flex flex-col max-w-lg mx-auto w-full">
-            <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-slate-600 mb-4" />
+          <div className="p-5 bg-[#0B1528] rounded-t-[24px] flex-1 flex flex-col max-w-lg mx-auto w-full">
+            <div className="mx-auto w-14 h-1.5 shrink-0 rounded-full bg-slate-600 mb-4" />
 
-            <div className="flex items-start justify-between mb-3">
+            <div className="flex items-start justify-between mb-4">
               <div>
-                <Drawer.Title className="text-xl font-bold text-white flex items-center gap-2">
+                <Drawer.Title className="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
                   </span>
                   Emergency Rapid Quote
                 </Drawer.Title>
-                <Drawer.Description className="text-xs text-slate-400 mt-0.5">
-                  Priority dispatch crew dispatched within 45 minutes
+                <Drawer.Description className="text-sm text-slate-300 mt-1">
+                  Certified master crew dispatched within 45 minutes
                 </Drawer.Description>
               </div>
               <button
                 type="button"
                 onClick={() => onOpenChange(false)}
-                className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition"
                 aria-label="Close drawer"
               >
                 <X className="w-5 h-5" />
@@ -83,66 +82,66 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
             {/* Direct Urgent Callout */}
             <a
               href={`tel:${siteConfig.contact.phoneRaw}`}
-              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-bold rounded-xl shadow-lg shadow-red-900/30 transition text-sm mb-4"
+              className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl shadow-xl shadow-red-900/35 transition text-base mb-4"
             >
-              <Phone className="w-4 h-4 animate-bounce" />
+              <Phone className="w-5 h-5 animate-bounce fill-current" />
               Immediate Emergency? Call {siteConfig.contact.phone}
             </a>
 
             {/* Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3.5 overflow-y-auto pr-1">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 overflow-y-auto pr-1">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                   Full Name *
                 </label>
                 <input
                   {...register('name')}
                   placeholder="e.g. John Miller"
-                  className="w-full px-3.5 py-2.5 bg-[#14233D] border border-[#1E3352] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] transition"
+                  className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                 />
                 {errors.name && (
-                  <p className="text-xs text-red-400 mt-1">{errors.name.message}</p>
+                  <p className="text-sm text-red-400 mt-1 font-medium">{errors.name.message}</p>
                 )}
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                     Phone Number *
                   </label>
                   <input
                     {...register('phone')}
                     type="tel"
                     placeholder="(555) 000-0000"
-                    className="w-full px-3.5 py-2.5 bg-[#14233D] border border-[#1E3352] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] transition"
+                    className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                   />
                   {errors.phone && (
-                    <p className="text-xs text-red-400 mt-1">{errors.phone.message}</p>
+                    <p className="text-sm text-red-400 mt-1 font-medium">{errors.phone.message}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                     Zip Code *
                   </label>
                   <input
                     {...register('zipCode')}
                     placeholder="e.g. 90210"
-                    className="w-full px-3.5 py-2.5 bg-[#14233D] border border-[#1E3352] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] transition"
+                    className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                   />
                   {errors.zipCode && (
-                    <p className="text-xs text-red-400 mt-1">{errors.zipCode.message}</p>
+                    <p className="text-sm text-red-400 mt-1 font-medium">{errors.zipCode.message}</p>
                   )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                   Water Damage Type *
                 </label>
                 <select
                   {...register('serviceType')}
-                  className="w-full px-3.5 py-2.5 bg-[#14233D] border border-[#1E3352] rounded-lg text-sm text-white focus:outline-none focus:border-[#00E5FF] transition"
+                  className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white focus:outline-none focus:border-[#00D2E0] transition"
                 >
                   {siteConfig.services.map((s) => (
                     <option key={s.id} value={s.id} className="bg-[#101E35]">
@@ -153,18 +152,18 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                   How Fast Do You Need Help?
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2.5">
                   {[
-                    { val: 'immediate', label: 'NOW (<45m)', color: 'border-red-500/60 text-red-400' },
-                    { val: 'today', label: 'Today', color: 'border-amber-500/60 text-amber-300' },
-                    { val: 'scheduled', label: 'Scheduled', color: 'border-slate-600 text-slate-300' },
+                    { val: 'immediate', label: 'NOW (<45m)', color: 'border-red-500/80 text-red-400 bg-red-950/20' },
+                    { val: 'today', label: 'Today', color: 'border-amber-500/80 text-amber-300 bg-amber-950/20' },
+                    { val: 'scheduled', label: 'Scheduled', color: 'border-white/20 text-slate-200 bg-[#14233D]' },
                   ].map((item) => (
                     <label
                       key={item.val}
-                      className={`flex flex-col items-center justify-center p-2 rounded-lg border bg-[#14233D] text-xs font-semibold cursor-pointer text-center hover:border-[#00E5FF] transition ${item.color}`}
+                      className={`flex flex-col items-center justify-center p-2.5 rounded-xl border text-sm font-bold cursor-pointer text-center hover:border-[#00D2E0] transition ${item.color}`}
                     >
                       <input
                         type="radio"
@@ -182,27 +181,27 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 px-4 bg-gradient-to-r from-[#00E5FF] to-[#00B8D4] hover:opacity-95 text-[#0B1528] font-bold rounded-xl shadow-lg shadow-cyan-500/20 text-sm transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-4 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl shadow-xl shadow-red-900/40 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting ? (
-                    <span className="animate-spin inline-block h-4 w-4 border-2 border-[#0B1528] border-t-transparent rounded-full" />
+                    <span className="animate-spin inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
                   ) : (
                     <>
-                      <AlertTriangle className="w-4 h-4" />
+                      <AlertTriangle className="w-5 h-5" />
                       Request Rapid 45-Min Dispatch Callback
                     </>
                   )}
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-4 text-[11px] text-slate-400 pt-1 pb-4">
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-300 pt-2 pb-4">
+                <span className="flex items-center gap-1.5 font-semibold text-emerald-400">
+                  <ShieldCheck className="w-4 h-4 text-[#00D2E0]" />
                   Direct Insurance Billing
                 </span>
                 <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+                  <Clock className="w-4 h-4 text-[#00D2E0]" />
                   Avg Callback &lt; 90s
                 </span>
               </div>

@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ServicesSection } from '@/components/sections/ServicesSection'
+import { ProtocolsTabsSection } from '@/components/sections/ProtocolsTabsSection'
 import { ProcessTimeline } from '@/components/sections/ProcessTimeline'
 import { BeforeAfterSection } from '@/components/sections/BeforeAfterSection'
 import { InsuranceSection } from '@/components/sections/InsuranceSection'
@@ -61,6 +62,9 @@ export default function App() {
 
         {/* 4. Certified Restoration Services */}
         <ServicesSection onOpenQuote={() => setQuoteOpen(true)} />
+
+        {/* 4b. Cult UI DirectionAwareTabs - IICRC Water Damage Protocols */}
+        <ProtocolsTabsSection onOpenQuote={() => setQuoteOpen(true)} />
 
         {/* 5. 5-Stage Drying Process Timeline (GSAP ScrollTrigger) */}
         <ProcessTimeline />

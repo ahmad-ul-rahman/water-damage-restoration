@@ -38,29 +38,23 @@ const iconMap: Record<string, React.ElementType> = {
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuote }) => {
   return (
     <section id="services" className="relative py-24 bg-[#0B1528] overflow-hidden">
-      {/* Subtle ambient lighting */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#00E5FF]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#FF2A2A]/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14233D] border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-            <span>Comprehensive Disaster Recovery</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#101E35] border border-white/15 text-slate-200 text-sm font-bold tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-[#00D2E0] animate-pulse" />
+            <span>Comprehensive Disaster Recovery Solutions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Certified Water Damage{' '}
-            <span className="bg-gradient-to-r from-[#00E5FF] to-cyan-300 bg-clip-text text-transparent">
-              Restoration Services
-            </span>
+            Certified Emergency Water Damage Services
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
-            Rapid response crews equipped with industrial thermal imaging, extraction pumps, and desiccant dehumidifiers to save your property.
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+            Rapid response crews equipped with commercial thermal cameras, truck-mounted extraction pumps, and desiccant dehumidifiers to protect your property.
           </p>
         </div>
 
         {/* Services 6-Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {siteConfig.services.map((service, index) => {
             const Icon = iconMap[service.iconName] || Droplets
             const imgSrc = serviceImages[service.id] || '/images/hero-water-damage.jpg'
@@ -68,69 +62,76 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuote })
             return (
               <div
                 key={service.id}
-                className="group relative rounded-2xl bg-[#101E35] border border-[#1E3352] hover:border-[#00E5FF]/60 flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group relative rounded-2xl bg-[#101E35] border border-white/15 hover:border-[#00D2E0]/50 flex flex-col justify-between overflow-hidden shadow-2xl transition-all duration-300 hover:-translate-y-1.5"
               >
-                {/* Border Beam subtle animation on first 2 cards */}
-                {index < 2 && <BorderBeam size={250} duration={12} delay={index * 4} />}
+                {/* Border Beam with Brand Colors (#00D2E0 aqua & #0284C7 blue) on top of perimeter */}
+                <BorderBeam
+                  size={260}
+                  duration={10}
+                  delay={index * 3}
+                  colorFrom="#00D2E0"
+                  colorTo="#0284C7"
+                  borderWidth={2}
+                />
 
                 {/* Service Image Card Header */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#14233D]">
+                <div className="relative h-56 w-full overflow-hidden bg-[#14233D]">
                   <img
                     src={imgSrc}
                     alt={service.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#101E35] via-[#101E35]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101E35] via-[#101E35]/40 to-transparent pointer-events-none" />
 
                   {/* Floating Service Icon Pill */}
-                  <div className="absolute top-3 left-3 p-2.5 rounded-xl bg-[#0B1528]/90 border border-[#1E3352] text-[#00E5FF] shadow-lg">
-                    <Icon className="w-5 h-5" />
+                  <div className="absolute top-4 left-4 p-3 rounded-xl bg-[#0B1528]/95 border border-white/15 text-[#00D2E0] shadow-xl">
+                    <Icon className="w-6 h-6" />
                   </div>
 
                   {/* 24/7 Tag */}
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#FF2A2A]/90 text-white text-[10px] font-extrabold uppercase tracking-wider">
+                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#FF2A2A] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg">
                     24/7 Dispatch
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#00E5FF] transition-colors">
+                <div className="p-7 flex-1 flex flex-col justify-between space-y-5">
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#00D2E0] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className="text-base text-slate-300 leading-relaxed">
                       {service.fullDescription}
                     </p>
                   </div>
 
                   {/* Features List */}
-                  <div className="space-y-2 pt-2 border-t border-[#1E3352]/70">
+                  <div className="space-y-2.5 pt-3 border-t border-white/10">
                     {service.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-300">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#00E5FF] flex-shrink-0" />
+                      <div key={fIdx} className="flex items-center gap-2.5 text-sm text-slate-200 font-medium">
+                        <CheckCircle className="w-4 h-4 text-[#00D2E0] shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="pt-3 grid grid-cols-2 gap-2">
+                  <div className="pt-4 grid grid-cols-2 gap-3">
                     <button
                       type="button"
                       onClick={onOpenQuote}
-                      className="w-full py-2.5 px-3 bg-[#14233D] hover:bg-[#1E3352] text-[#00E5FF] border border-[#00E5FF]/30 hover:border-[#00E5FF] rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="w-full py-3 px-3.5 bg-[#14233D] hover:bg-[#1E3352] text-white border border-white/20 hover:border-[#00D2E0] rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Get Quote</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-4 h-4 text-[#00D2E0]" />
                     </button>
 
                     <a
                       href={`tel:${siteConfig.contact.phoneRaw}`}
-                      className="w-full py-2.5 px-3 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md shadow-red-900/30"
+                      className="w-full py-3 px-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-sm font-extrabold transition flex items-center justify-center gap-2 shadow-lg shadow-red-900/40"
                     >
-                      <PhoneCall className="w-3 h-3" />
+                      <PhoneCall className="w-4 h-4 fill-current" />
                       <span>Dispatch</span>
                     </a>
                   </div>

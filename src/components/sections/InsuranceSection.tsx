@@ -37,33 +37,31 @@ export const InsuranceSection: React.FC = () => {
   ]
 
   return (
-    <section id="insurance" className="relative py-24 bg-[#0B1528] border-t border-[#1E3352] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="insurance" className="relative py-24 bg-[#0B1528] border-t border-white/10 overflow-hidden">
+      <div className="w-full px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14233D] border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#101E35] border border-white/15 text-slate-200 text-sm font-bold">
+            <ShieldCheck className="w-4 h-4 text-[#00D2E0]" />
             <span>Direct Insurance Billing Specialist</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            We Bill Your Insurance Directly{' '}
-            <span className="bg-gradient-to-r from-[#00E5FF] to-cyan-300 bg-clip-text text-transparent">
-              Zero Upfront Stress
-            </span>
+            We Bill Your Insurance Directly With Zero Upfront Stress
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             Water damage is stressful enough. We take over the paperwork, negotiate directly with your adjuster, and ensure your home is restored to 100% pre-loss condition.
           </p>
         </div>
 
         {/* Carrier Logos Infinite Marquee */}
-        <div className="mb-16 py-4 bg-[#101E35] border-y border-[#1E3352]/70 rounded-2xl overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:28s]">
+        <div className="mb-16 py-5 bg-[#101E35] border-y border-white/10 rounded-2xl overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:30s]">
             {insuranceCarriers.map((carrier, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 px-6 py-2 text-slate-300 font-bold text-sm tracking-wide bg-[#14233D] rounded-xl border border-[#1E3352] mx-2"
+                className="flex items-center gap-2.5 px-6 py-2.5 text-slate-200 font-bold text-sm tracking-wide bg-[#14233D] rounded-xl border border-white/15 mx-2.5"
               >
-                <ShieldCheck className="w-4 h-4 text-[#00E5FF]" />
+                <ShieldCheck className="w-4 h-4 text-[#00D2E0]" />
                 <span>{carrier}</span>
               </div>
             ))}
@@ -79,16 +77,16 @@ export const InsuranceSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-[#101E35] border border-[#1E3352] hover:border-[#00E5FF]/50 transition-all flex items-start gap-4"
+                  className="p-7 rounded-2xl bg-[#101E35] border border-white/15 hover:border-[#00D2E0]/50 transition-all flex items-start gap-5 shadow-xl"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#14233D] border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] flex-shrink-0 mt-1">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-14 h-14 rounded-xl bg-[#14233D] border border-white/15 flex items-center justify-center text-[#00D2E0] shrink-0 mt-0.5">
+                    <Icon className="w-7 h-7" />
                   </div>
-                  <div className="space-y-1.5">
-                    <h3 className="text-base sm:text-lg font-bold text-white">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className="text-base text-slate-300 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -99,25 +97,25 @@ export const InsuranceSection: React.FC = () => {
 
           {/* Right: Thermal Imaging & Estimation Image */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-[#1E3352] shadow-2xl bg-[#101E35] group">
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#101E35] group">
               <img
                 src="/images/service-insurance.jpg"
                 alt="FLIR thermal imaging moisture detection camera alongside insurance claim documentation and Xactimate approval"
-                className="w-full h-[380px] sm:h-[440px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-[400px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1528] via-[#0B1528]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1528] via-[#0B1528]/25 to-transparent" />
 
-              <div className="absolute bottom-4 left-4 right-4 p-4 bg-[#0B1528]/95 backdrop-blur-md rounded-xl border border-[#1E3352] space-y-2">
-                <div className="flex items-center justify-between text-xs font-bold">
-                  <span className="text-white flex items-center gap-1.5">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
+              <div className="absolute bottom-4 left-4 right-4 p-5 bg-[#0B1528]/95 backdrop-blur-md rounded-xl border border-white/15 space-y-2.5 shadow-2xl">
+                <div className="flex items-center justify-between text-sm font-bold">
+                  <span className="text-white flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-400" />
                     Insurance Claim Approved
                   </span>
-                  <span className="text-[#00E5FF]">Xactimate® Verified</span>
+                  <span className="text-emerald-400 font-extrabold">Xactimate® Line-Item</span>
                 </div>
-                <p className="text-[11px] text-slate-400">
-                  Comprehensive line-item documentation leaves zero room for claim denials.
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  Comprehensive thermal FLIR documentation leaves zero room for claim denials.
                 </p>
               </div>
             </div>
