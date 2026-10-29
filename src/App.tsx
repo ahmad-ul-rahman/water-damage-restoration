@@ -1,122 +1,97 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
+import Lenis from 'lenis'
+import { Toaster } from 'sonner'
+import { Navbar } from '@/components/layout/Navbar'
+import { HeroSection } from '@/components/sections/HeroSection'
+import { TrustBar } from '@/components/sections/TrustBar'
+import { ServicesSection } from '@/components/sections/ServicesSection'
+import { ProcessTimeline } from '@/components/sections/ProcessTimeline'
+import { BeforeAfterSection } from '@/components/sections/BeforeAfterSection'
+import { InsuranceSection } from '@/components/sections/InsuranceSection'
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
+import { ServiceAreasSection } from '@/components/sections/ServiceAreasSection'
+import { FaqSection } from '@/components/sections/FaqSection'
+import { ContactSection } from '@/components/sections/ContactSection'
+import { Footer } from '@/components/layout/Footer'
+import { MobileStickyCall } from '@/components/layout/MobileStickyCall'
+import { QuoteDrawer } from '@/components/modals/QuoteDrawer'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [quoteOpen, setQuoteOpen] = useState(false)
+
+  // Initialize Lenis smooth scroll with respect for prefers-reduced-motion
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    })
+
+    let frameId: number
+    function raf(time: number) {
+      lenis.raf(time)
+      frameId = requestAnimationFrame(raf)
+    }
+
+    frameId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(frameId)
+      lenis.destroy()
+    }
+  }, [])
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-[#0B1528] text-slate-100 flex flex-col selection:bg-[#00E5FF] selection:text-[#0B1528] pb-16 sm:pb-0">
+      <Toaster position="top-right" richColors theme="dark" closeButton />
 
-      <div className="ticks"></div>
+      {/* 1. Sticky Navigation */}
+      <Navbar onOpenQuote={() => setQuoteOpen(true)} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Main Content Sections */}
+      <main className="flex-1">
+        {/* 2. Hero with WebGL water ripple effect */}
+        <HeroSection onOpenQuote={() => setQuoteOpen(true)} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        {/* 3. Trust Bar with animated counter metrics */}
+        <TrustBar />
+
+        {/* 4. Certified Restoration Services */}
+        <ServicesSection onOpenQuote={() => setQuoteOpen(true)} />
+
+        {/* 5. 5-Stage Drying Process Timeline (GSAP ScrollTrigger) */}
+        <ProcessTimeline />
+
+        {/* 6. Interactive Before & After Comparison Slider */}
+        <BeforeAfterSection />
+
+        {/* 7. Direct Insurance Billing & Carrier Marquee */}
+        <InsuranceSection />
+
+        {/* 8. Homeowner Emergency Reviews & Fleet Spotlight */}
+        <TestimonialsSection />
+
+        {/* 9. Metropolitan Service Area Hubs & Zip Code Lookup */}
+        <ServiceAreasSection />
+
+        {/* 10. Frequently Asked Questions */}
+        <FaqSection />
+
+        {/* 11. Final Emergency Dispatch CTA & Contact Form */}
+        <ContactSection />
+      </main>
+
+      {/* 12. Full Information Footer */}
+      <Footer />
+
+      {/* 13. Sticky Mobile Call & Quote Bar (Mobile Only) */}
+      <MobileStickyCall onOpenQuote={() => setQuoteOpen(true)} />
+
+      {/* 14. Accessible Mobile "Get a Quote" Vaul Drawer */}
+      <QuoteDrawer open={quoteOpen} onOpenChange={setQuoteOpen} />
+    </div>
   )
 }
-
-export default App
