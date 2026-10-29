@@ -97,6 +97,13 @@ export async function gitStatus() {
   return results
 }
 
+const customHttp = {
+  async request(req) {
+    req.fetchOptions = { ...(req.fetchOptions || {}), timeout: 180000 }
+    return http.request(req)
+  }
+}
+
 export async function gitCommitAndPush(message = 'Update project files') {
   const token = getGitHubToken()
   if (!token) {
@@ -125,21 +132,26 @@ export async function gitCommitAndPush(message = 'Update project files') {
   })
   console.log('Committed:', sha)
 
+  await git.writeRef({
+    fs,
+    dir,
+    ref: 'refs/heads/main',
+    value: sha,
+    force: true
+  })
+
   try {
     await git.deleteRemote({ fs, dir, remote: 'origin' })
   } catch {}
   await git.addRemote({ fs, dir, remote: 'origin', url: repoUrl })
 
-  try {
-    await git.branch({ fs, dir, ref: 'main' })
-  } catch {}
-
   const pushResult = await git.push({
     fs,
-    http,
+    http: customHttp,
     dir,
     remote: 'origin',
     ref: 'main',
+    remoteRef: 'main',
     force: true,
     onAuth: () => ({ username: token })
   })
