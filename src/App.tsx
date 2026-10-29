@@ -12,7 +12,7 @@ import { InsuranceSection } from '@/components/sections/InsuranceSection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { ServiceAreasSection } from '@/components/sections/ServiceAreasSection'
 import { FaqSection } from '@/components/sections/FaqSection'
-import { ContactSection } from '@/components/sections/ContactSection'
+import { EmergencyCtaSection } from '@/components/sections/EmergencyCtaSection'
 import { Footer } from '@/components/layout/Footer'
 import { MobileStickyCall } from '@/components/layout/MobileStickyCall'
 import { QuoteDrawer } from '@/components/modals/QuoteDrawer'
@@ -81,11 +81,11 @@ export default function App() {
         {/* 9. Metropolitan Service Area Hubs & Zip Code Lookup */}
         <ServiceAreasSection />
 
-        {/* 10. Frequently Asked Questions */}
+        {/* 10. Frequently Asked Questions (Cult UI Expandable) */}
         <FaqSection />
 
-        {/* 11. Final Emergency Dispatch CTA & Contact Form */}
-        <ContactSection />
+        {/* 11. Final Emergency Hotline CTA (Direct Phone Callout) */}
+        <EmergencyCtaSection />
       </main>
 
       {/* 12. Full Information Footer */}
