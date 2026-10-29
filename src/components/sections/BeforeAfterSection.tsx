@@ -36,8 +36,8 @@ export const BeforeAfterSection: React.FC = () => {
                     className="w-full h-[380px] sm:h-[480px] lg:h-[540px] object-cover object-center"
                   />
                   {/* Before Label */}
-                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2 py-2 px-4 rounded-xl bg-red-600 text-white font-black text-sm tracking-wide uppercase backdrop-blur-md shadow-xl">
-                    <Droplets className="w-4 h-4 fill-current" />
+                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2 py-2 px-4 rounded-xl bg-[#101E35]/95 border border-white/20 text-slate-200 font-black text-sm tracking-wide uppercase backdrop-blur-md shadow-xl">
+                    <Droplets className="w-4 h-4 text-[#00D2E0] fill-current" />
                     <span>BEFORE • 4&quot; Flood Water</span>
                   </div>
                 </div>

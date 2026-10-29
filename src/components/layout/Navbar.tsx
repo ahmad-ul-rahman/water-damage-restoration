@@ -83,11 +83,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="relative group flex items-center gap-2.5 px-5 py-2.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl font-extrabold text-sm tracking-wide shadow-xl shadow-red-600/35 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="relative group flex items-center gap-2.5 px-5 py-2.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl font-black text-sm tracking-wide shadow-xl shadow-cyan-950/60 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0B1528] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#0B1528]" />
                 </span>
                 <Phone className="w-4 h-4 fill-current" />
                 <span>Call 24/7: {siteConfig.contact.phone}</span>
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             <div className="flex md:hidden items-center gap-2.5">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="flex items-center gap-1.5 px-3 py-2 bg-[#FF2A2A] text-white rounded-xl text-sm font-bold shadow-md"
+                className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] text-[#0B1528] rounded-xl text-sm font-black shadow-md"
                 aria-label="Call emergency dispatch"
               >
                 <Phone className="w-4 h-4 fill-current" />
@@ -157,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="w-full py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl text-base text-center flex items-center justify-center gap-2.5 shadow-xl shadow-red-900/40"
+                className="w-full py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black rounded-xl text-base text-center flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-950/50"
               >
                 <Phone className="w-5 h-5 fill-current" />
                 Call 24/7 Dispatch ({siteConfig.contact.phone})

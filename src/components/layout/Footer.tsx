@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="inline-flex items-center gap-2.5 px-5 py-3 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl text-base shadow-xl shadow-red-900/35 transition"
+                className="inline-flex items-center gap-2.5 px-5 py-3 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black rounded-xl text-base shadow-xl shadow-cyan-950/60 transition"
               >
                 <Phone className="w-5 h-5 fill-current animate-bounce" />
                 <span>Call 24/7: {siteConfig.contact.phone}</span>

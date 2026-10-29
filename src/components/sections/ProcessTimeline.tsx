@@ -90,7 +90,7 @@ export const ProcessTimeline: React.FC = () => {
           >
             <div
               ref={lineRef}
-              className="w-full h-full bg-gradient-to-b from-[#00D2E0] via-sky-400 to-[#FF2A2A] origin-top"
+              className="w-full h-full bg-gradient-to-b from-[#00D2E0] via-[#0284C7] to-[#1E3A8A] origin-top"
             />
           </div>
 
@@ -131,7 +131,7 @@ export const ProcessTimeline: React.FC = () => {
                           Stage 0{step.step}
                         </span>
                         <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-300 bg-[#0B1528] px-3 py-1 rounded-md">
-                          <Clock className="w-4 h-4 text-red-400" />
+                          <Clock className="w-4 h-4 text-[#00D2E0]" />
                           {step.timeframe}
                         </span>
                       </div>

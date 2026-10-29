@@ -90,7 +90,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuote })
                   </div>
 
                   {/* 24/7 Tag */}
-                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#FF2A2A] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg">
+                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#00D2E0] to-[#0284C7] text-[#0B1528] text-sm font-black uppercase tracking-wider shadow-lg">
                     24/7 Dispatch
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuote })
 
                     <a
                       href={`tel:${siteConfig.contact.phoneRaw}`}
-                      className="w-full py-3 px-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-sm font-extrabold transition flex items-center justify-center gap-2 shadow-lg shadow-red-900/40"
+                      className="w-full py-3 px-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-sm font-black transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-950/50"
                     >
                       <PhoneCall className="w-4 h-4 fill-current" />
                       <span>Dispatch</span>

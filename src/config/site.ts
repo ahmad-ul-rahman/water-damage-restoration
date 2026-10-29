@@ -54,11 +54,11 @@ export interface SiteConfig {
   }
   brandColors: {
     darkNavy: string
-    aquaAccent: string
-    redEmergencyCTA: string
     darkNavyLight: string
+    aquaAccent: string
     aquaHover: string
-    redHover: string
+    blueAccent: string
+    blueHover: string
   }
   services: ServiceItem[]
   processSteps: ProcessStep[]
@@ -86,10 +86,10 @@ export const siteConfig: SiteConfig = {
   brandColors: {
     darkNavy: "#0B1528",
     darkNavyLight: "#14233D",
-    aquaAccent: "#00E5FF",
+    aquaAccent: "#00D2E0",
     aquaHover: "#00B8D4",
-    redEmergencyCTA: "#FF2A2A",
-    redHover: "#D50000",
+    blueAccent: "#0284C7",
+    blueHover: "#0369A1",
   },
   services: [
     {

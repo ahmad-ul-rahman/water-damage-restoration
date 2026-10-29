@@ -21,11 +21,11 @@ export const MobileStickyCall: React.FC<MobileStickyCallProps> = ({ onOpenQuote 
 
         <a
           href={`tel:${siteConfig.contact.phoneRaw}`}
-          className="flex items-center justify-center gap-2 py-3 px-3 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold text-sm tracking-wide rounded-xl shadow-lg shadow-red-600/40 transition active:scale-95"
+          className="flex items-center justify-center gap-2 py-3 px-3 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black text-sm tracking-wide rounded-xl shadow-lg shadow-cyan-950/60 transition active:scale-95"
         >
           <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0B1528] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#0B1528]" />
           </span>
           <Phone className="w-4 h-4 fill-current" />
           <span>Call 24/7</span>

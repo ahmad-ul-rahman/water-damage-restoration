@@ -60,8 +60,8 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
               <div>
                 <Drawer.Title className="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
                   <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
                   </span>
                   Emergency Rapid Quote
                 </Drawer.Title>
@@ -82,7 +82,7 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
             {/* Direct Urgent Callout */}
             <a
               href={`tel:${siteConfig.contact.phoneRaw}`}
-              className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl shadow-xl shadow-red-900/35 transition text-base mb-4"
+              className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black rounded-xl shadow-xl shadow-cyan-950/60 transition text-base mb-4"
             >
               <Phone className="w-5 h-5 animate-bounce fill-current" />
               Immediate Emergency? Call {siteConfig.contact.phone}
@@ -100,7 +100,7 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                   className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                 />
                 {errors.name && (
-                  <p className="text-sm text-red-400 mt-1 font-medium">{errors.name.message}</p>
+                  <p className="text-sm text-amber-400 mt-1 font-medium">{errors.name.message}</p>
                 )}
               </div>
 
@@ -116,7 +116,7 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                     className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                   />
                   {errors.phone && (
-                    <p className="text-sm text-red-400 mt-1 font-medium">{errors.phone.message}</p>
+                    <p className="text-sm text-amber-400 mt-1 font-medium">{errors.phone.message}</p>
                   )}
                 </div>
 
@@ -130,7 +130,7 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                     className="w-full px-4 py-3 bg-[#14233D] border border-white/20 rounded-xl text-base text-white placeholder-slate-400 focus:outline-none focus:border-[#00D2E0] transition"
                   />
                   {errors.zipCode && (
-                    <p className="text-sm text-red-400 mt-1 font-medium">{errors.zipCode.message}</p>
+                    <p className="text-sm text-amber-400 mt-1 font-medium">{errors.zipCode.message}</p>
                   )}
                 </div>
               </div>
@@ -157,8 +157,8 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                 </label>
                 <div className="grid grid-cols-3 gap-2.5">
                   {[
-                    { val: 'immediate', label: 'NOW (<45m)', color: 'border-red-500/80 text-red-400 bg-red-950/20' },
-                    { val: 'today', label: 'Today', color: 'border-amber-500/80 text-amber-300 bg-amber-950/20' },
+                    { val: 'immediate', label: 'NOW (<45m)', color: 'border-[#00D2E0] text-[#00D2E0] bg-[#00D2E0]/10' },
+                    { val: 'today', label: 'Today', color: 'border-sky-500/80 text-sky-300 bg-sky-950/20' },
                     { val: 'scheduled', label: 'Scheduled', color: 'border-white/20 text-slate-200 bg-[#14233D]' },
                   ].map((item) => (
                     <label
@@ -181,13 +181,13 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ open, onOpenChange }) 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl shadow-xl shadow-red-900/40 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-4 px-4 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black rounded-xl shadow-xl shadow-cyan-950/60 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting ? (
-                    <span className="animate-spin inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
+                    <span className="animate-spin inline-block h-5 w-5 border-2 border-[#0B1528] border-t-transparent rounded-full" />
                   ) : (
                     <>
-                      <AlertTriangle className="w-5 h-5" />
+                      <AlertTriangle className="w-5 h-5 text-[#0B1528]" />
                       Request Rapid 45-Min Dispatch Callback
                     </>
                   )}

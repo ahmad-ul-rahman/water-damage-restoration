@@ -64,14 +64,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
             <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="group relative flex items-center justify-center gap-3.5 px-8 py-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl font-black text-base tracking-wide shadow-2xl shadow-red-600/40 hover:shadow-red-600/60 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative flex items-center justify-center gap-3.5 px-8 py-4 bg-gradient-to-r from-[#00D2E0] via-[#0284C7] to-[#007299] hover:brightness-110 text-[#0B1528] rounded-xl font-black text-base tracking-wide shadow-2xl shadow-cyan-950/70 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                  <Phone className="w-5 h-5 text-white fill-current animate-bounce" />
+                <div className="w-9 h-9 rounded-full bg-[#0B1528]/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
+                  <Phone className="w-5 h-5 text-[#0B1528] fill-current animate-bounce" />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-sm uppercase tracking-wider text-red-100 font-extrabold">24/7 Emergency Dispatch</span>
-                  <span className="text-lg font-black leading-tight">{siteConfig.contact.phone}</span>
+                  <span className="text-sm uppercase tracking-wider text-[#0B1528]/80 font-black">24/7 Emergency Dispatch</span>
+                  <span className="text-lg font-black leading-tight text-[#0B1528]">{siteConfig.contact.phone}</span>
                 </div>
               </a>
 
@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
                 {/* Floating Bottom Incident Response Panel */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 bg-[#0B1528]/95 backdrop-blur-md border border-white/15 rounded-xl flex items-center justify-between shadow-2xl">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#14233D] border border-[#00D2E0]/40 flex items-center justify-center text-[#00D2E0] shrink-0">
                       <ShieldAlert className="w-6 h-6" />
                     </div>
                     <div>

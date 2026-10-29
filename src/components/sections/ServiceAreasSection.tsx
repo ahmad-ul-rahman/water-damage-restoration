@@ -51,7 +51,7 @@ export const ServiceAreasSection: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="w-full sm:w-auto px-7 py-3 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold text-base rounded-xl transition shadow-xl shadow-red-900/35 cursor-pointer shrink-0"
+              className="w-full sm:w-auto px-7 py-3 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black text-base rounded-xl transition shadow-xl shadow-cyan-950/60 cursor-pointer shrink-0"
             >
               Check Availability
             </button>
@@ -99,7 +99,7 @@ export const ServiceAreasSection: React.FC = () => {
 
                 <a
                   href={`tel:${siteConfig.contact.phoneRaw}`}
-                  className="text-[#FF2A2A] hover:text-red-400 font-extrabold flex items-center gap-1.5 text-sm"
+                  className="text-[#00D2E0] hover:text-cyan-300 font-black flex items-center gap-1.5 text-sm"
                 >
                   <Phone className="w-4 h-4 fill-current" />
                   <span>Call Hub</span>
@@ -124,7 +124,7 @@ export const ServiceAreasSection: React.FC = () => {
             <div className="pt-5 mt-5 border-t border-white/10">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="w-full py-3 px-4 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold rounded-xl text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg shadow-red-900/40"
+                className="w-full py-3.5 px-4 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black rounded-xl text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-xl shadow-cyan-950/60"
               >
                 <Phone className="w-4 h-4 fill-current" />
                 <span>Call Extended Dispatch ({siteConfig.contact.phone})</span>

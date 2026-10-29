@@ -80,7 +80,7 @@ export const FaqSection: React.FC = () => {
         {/* Direct Help Callout Banner */}
         <div className="mt-12 p-7 rounded-2xl bg-[#14233D] border border-white/15 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#101E35] border border-[#00D2E0]/40 flex items-center justify-center text-[#00D2E0] shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
@@ -93,7 +93,7 @@ export const FaqSection: React.FC = () => {
 
           <a
             href={`tel:${siteConfig.contact.phoneRaw}`}
-            className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white font-extrabold text-base rounded-xl shadow-xl shadow-red-900/40 transition shrink-0 flex items-center gap-2.5"
+            className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] font-black text-base rounded-xl shadow-xl shadow-cyan-950/60 transition shrink-0 flex items-center gap-2.5"
           >
             <Phone className="w-5 h-5 fill-current" />
             <span>Call Live Dispatcher</span>

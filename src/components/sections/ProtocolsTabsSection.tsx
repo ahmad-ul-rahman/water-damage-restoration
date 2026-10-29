@@ -56,7 +56,7 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-base font-extrabold flex items-center gap-2.5 shadow-xl shadow-red-900/40 transition"
+                className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-base font-black flex items-center gap-2.5 shadow-xl shadow-cyan-950/50 transition"
               >
                 <Phone className="w-5 h-5 fill-current" />
                 <span>Dispatch Cat-1 Techs</span>
@@ -130,7 +130,7 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-base font-extrabold flex items-center gap-2.5 shadow-xl shadow-red-900/40 transition"
+                className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-base font-black flex items-center gap-2.5 shadow-xl shadow-cyan-950/50 transition"
               >
                 <Phone className="w-5 h-5 fill-current" />
                 <span>Dispatch Decon Unit</span>
@@ -173,8 +173,8 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
       content: (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#101E35] border border-white/15 rounded-3xl p-8 sm:p-10 shadow-2xl mt-8">
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-red-950/80 border border-red-500/40 text-red-200 text-sm font-bold">
-              <Biohazard className="w-4 h-4 text-red-400" />
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#14233D] border border-amber-500/40 text-amber-300 text-sm font-bold">
+              <Biohazard className="w-4 h-4 text-amber-400" />
               <span>Biohazard Sewage Backup • River Flooding • Ground Water</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -185,26 +185,26 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-200 font-semibold">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-400 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#00D2E0] shrink-0" />
                 <span>Negative air containment barriers</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-400 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#00D2E0] shrink-0" />
                 <span>Safe disposal of bio-porous materials</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-400 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#00D2E0] shrink-0" />
                 <span>Broad-spectrum thermal fogging disinfection</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-400 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#00D2E0] shrink-0" />
                 <span>Formal third-party hygiene clearance</span>
               </div>
             </div>
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-base font-extrabold flex items-center gap-2.5 shadow-xl shadow-red-900/40 transition"
+                className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-base font-black flex items-center gap-2.5 shadow-xl shadow-cyan-950/50 transition"
               >
                 <Phone className="w-5 h-5 fill-current" />
                 <span>Dispatch Biohazard Team</span>
@@ -229,7 +229,7 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
               <div className="p-6 space-y-3 bg-[#0B1528]">
                 <div className="flex justify-between items-center text-sm font-bold">
                   <span className="text-slate-300">Hazard Rating:</span>
-                  <span className="text-red-400 font-extrabold">Class 3 Extreme Biohazard</span>
+                  <span className="text-amber-400 font-extrabold">Class 3 Biohazard Protocol</span>
                 </div>
                 <div className="flex justify-between items-center text-sm font-bold border-t border-white/10 pt-2.5">
                   <span className="text-slate-300">Crew Certification:</span>
@@ -278,7 +278,7 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-base font-extrabold flex items-center gap-2.5 shadow-xl shadow-red-900/40 transition"
+                className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-base font-black flex items-center gap-2.5 shadow-xl shadow-cyan-950/50 transition"
               >
                 <Phone className="w-5 h-5 fill-current" />
                 <span>Call Commercial Dispatch</span>
@@ -353,7 +353,7 @@ export const ProtocolsTabsSection: React.FC<ProtocolsTabsSectionProps> = ({ onOp
               <button
                 type="button"
                 onClick={onOpenQuote}
-                className="px-6 py-3.5 bg-[#FF2A2A] hover:bg-[#D50000] text-white rounded-xl text-base font-extrabold flex items-center gap-2.5 shadow-xl shadow-red-900/40 transition cursor-pointer"
+                className="px-6 py-3.5 bg-gradient-to-r from-[#00D2E0] to-[#0284C7] hover:brightness-110 text-[#0B1528] rounded-xl text-base font-black flex items-center gap-2.5 shadow-xl shadow-cyan-950/60 transition cursor-pointer"
               >
                 <span>File Direct Insurance Claim</span>
                 <ArrowRight className="w-5 h-5" />
